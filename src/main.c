@@ -12,9 +12,12 @@ t_ls		init_flags(int argc, char **argv)
 	while (++i < argc)
 	{
 		j = 0;
-		len = ft_strlen(argv[i]);
-		while (++j < len)
-			f.flags[(int)argv[i][j]] = 1;
+		if (argv[i][j] == '-')
+		{
+			len = ft_strlen(argv[i]);
+			while (++j < len)
+				f.flags[(int)argv[i][j]] = 1;
+		}
 	}
 	return (f);
 }
